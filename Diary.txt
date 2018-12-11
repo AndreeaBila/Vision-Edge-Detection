@@ -1,0 +1,38 @@
+load filters/filters
+shakey = read_image('','shakey.150.gif');
+show_image(shakey)
+who
+
+Your variables are:
+
+difference_gradient_filterX             gaussian_filter_5x5                     sobelX                                  
+difference_gradient_filterY             laplacian                               sobelY                                  
+first_order_gaussian_filter_1d_length5  mean_filter_3x3                         
+gaussian_filter_1d_length5              mean_filter_5x5                         
+gaussian_filter_3x3                     shakey                                  
+
+shakey_gaussian = conv2(shakey,gaussian_filter_5x5,'same');
+show_image(shakey_gaussian)
+laplacian_1d_gaussian = conv2(laplacian,gaussian_filter_1d_length5,'same')
+
+laplacian_1d_gaussian =
+
+    0.2442    0.4026    0.2442
+   -0.5197   -1.1221   -0.5197
+    0.2442    0.4026    0.2442
+
+laplacian_2d_gaussian = conv2(laplacian_1d_gaussian,gaussian_filter_1d_length5,'same');
+shakey_log = conv2(shakey_gaussian,laplacian_2d_gaussian,'same');
+show_image(shakey_log)
+get(0,'Diary')
+
+ans =
+
+    'on'
+
+shakey_zero_crossing = edge(shakey_log,'zerocross',1.6);
+save
+
+Saving to: D:\Uni\year2\vision\Vision-Edge-Detection\matlab.mat
+
+diary
