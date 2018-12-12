@@ -6,5 +6,5 @@ load filters/filters
 img_sobelX = conv2(img,sobelX,'same')
 img_sobelY = conv2(img,sobelY,'same')
 m = magnitude(img_sobelX,img_sobelY)
-outputArg1 = imcomplement(m);
+outputArg1 = imbinarize(imcomplement(m));
 end

@@ -6,5 +6,5 @@ load filters/roberts
 img_robertsA = conv2(img,robertsA,'same')
 img_robertsB = conv2(img,robertsB,'same')
 m = magnitude(img_robertsA,img_robertsB)
-outputArg1 = imcomplement(m);
+outputArg1 = imbinarize(imcomplement(m));
 end

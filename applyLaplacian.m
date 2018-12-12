@@ -8,5 +8,5 @@ lapY = laplacian.';
 img_lapX = conv2(img, lapX,'same')
 img_lapY = conv2(img, lapY,'same')
 m = magnitude(img_lapX,img_lapY)
-outputArg1 = imcomplement(m);
+outputArg1 = imbinarize(imcomplement(m));
 end

@@ -6,19 +6,20 @@ TN = 0;
 FN = 0;
 FP = 0;
 
-for row=1:size(img1)
-    for col=1:size(img1)
-        if img1(row,col) == 0 && img2(row,col) == 0
-            TP = TP + 1
+[m,n] = size(img1);
+for row=1:m
+    for col=1:n
+        if (img1(row,col) == 0 && img2(row,col) == 0)
+            TP = TP + 1;
         end
-        if img1(row,col) == 0 && img2(row,col) == 1
-            FP = FP + 1
+        if (img1(row,col) == 0 && img2(row,col) == 1)
+            FP = FP + 1;
         end
-        if img1(row,col) == 1 && img2(row,col) == 0
-            FN = FN + 1
+        if (img1(row,col) == 1 && img2(row,col) == 0)
+            FN = FN + 1;
         end
-        if img1(row,col) == 1 && img2(row,col) == 1
-            TN = TN + 1
+        if (img1(row,col) == 1 && img2(row,col) == 1)
+            TN = TN + 1;
         end
     end
 end

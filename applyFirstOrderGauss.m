@@ -8,5 +8,5 @@ gaussY = first_order_gaussian_filter_1d_length5.';
 img_gaussX = conv2(img, gaussX,'same')
 img_gaussY = conv2(img, gaussY,'same')
 m = magnitude(img_gaussX,img_gaussY)
-outputArg1 = imcomplement(m);
+outputArg1 = imbinarize(imcomplement(m));
 end
