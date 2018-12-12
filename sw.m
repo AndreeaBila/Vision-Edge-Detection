@@ -1,4 +1,4 @@
-function show_image(img)
+function sw(img)
 % SHOW_IMAGE Image
 
 figure % creates a new Figure window
